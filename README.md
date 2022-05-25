@@ -7,15 +7,15 @@ Uma pequena aplicaçao de divulgação e marketplace das balas 7 belo.
 ### Instalação
 Você precisa ter esse repositório, é simples, rode os comandos abaixo, em caso de erros, rode como sudo/administrador.
 
-```bash
+```Bash
 > git clone https://github.com/devsleonardo/iPORTO.git
-> npm install or/or npm i
+> npm install 
 
 ```
 
 ### Inicialização
 Após a instalação, rode o comando abaixo e espere iniciar.
 
-```bash
+```PowerShell
 > ng serve / npm start
 ```
