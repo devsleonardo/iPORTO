@@ -1,0 +1,28 @@
+@import 'layout';
+
+.item-1 {
+  margin-top: 5rem;
+  @include responsive(s) {
+    margin-top: 0;
+  }
+}
+
+.card {
+  border-radius: 0.8rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+}
+
+.title {
+  font-weight: 800;
+  color: #00ad6f;
+}
+
+.form-control {
+  background-color: #f8f9fa;
+}

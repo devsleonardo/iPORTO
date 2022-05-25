@@ -1,0 +1,71 @@
+<div class="container-xl">
+  <div class="row">
+    <div class="col-md-7 item-1 me-5">
+      <h1 class="mb-4 title">BALAS 7 BELO</h1>
+      <h2 class="mb-4">Desde de 1960 a melhor bala fabricada no brasil.</h2>
+      <h4 class="mb-4">
+        Você não pode comprar felicidade, mas pode comprar balas 7 belo, que é quase a mesma
+        coisa.
+      </h4>
+      <p class="mb-4">BALAS 7 BELO, É O MELHOR PRESENTE PARA O DIA DOS NAMORADOS.</p>
+      <button
+        type="button"
+        *ngIf="validButton"
+        class="mb-4 btn btn-success w-50 btn-lg"
+        (click)="buttonClick()">
+        Presentear seu amor
+      </button>
+    </div>
+    <div *ngIf="!validButton" class="col-md-4">
+      <h2 class="mb-4 title">Finalizar pedido</h2>
+      <form action="" [formGroup]="form" class="card px-3 py-4">
+        <div class="flex-start">
+          <h4 class="mb-2">Balas 7 Belo</h4>
+          <img src="../../assets/svgs/framboesa.svg" alt="avatar" class="avatar ms-2 mb-3" />
+        </div>
+        <p>É o melhor presente para o dia dos namorados...</p>
+        <input
+          type="email"
+          class="form-control mb-4"
+          placeholder="E-mail*"
+          formControlName="email" />
+        <input
+          type="text"
+          class="form-control mb-4"
+          placeholder="Nome*"
+          formControlName="name" />
+        <input
+          type="text"
+          class="form-control mb-4"
+          placeholder="Telefone*"
+          formControlName="phone"
+          mask="(00) 00000-0000" />
+        <button
+          type="button"
+          (click)="buttonClick()"
+          class="mb-4 btn btn-outline-success btn-lg me-2">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="mb-4 btn btn-success btn-lg"
+          [disabled]="!form.valid"
+          (click)="postContact()">
+          Efetuar pedido
+        </button>
+      </form>
+    </div>
+    <div *ngIf="validButton" class="col-md-4">
+      <h2 class="mb-4 title">Depoimentos</h2>
+      <div class="card p-4 mb-3" *ngFor="let item of comments | slice: 0:3">
+        <div class="flex-start">
+          <img src="../../assets/svgs/framboesa.svg" alt="avatar" class="avatar" />
+          <h5 class="ms-2">
+            {{ item.name }}
+          </h5>
+        </div>
+        <p class="mt-2">{{ item.body }}</p>
+      </div>
+    </div>
+  </div>
+</div>
